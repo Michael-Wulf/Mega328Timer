@@ -48,7 +48,7 @@ Example:
 
 2. Because of #1, the amount of instructions and their complexity should be very limited!
 
-3. Max interval length at a cpu clock of 16 MHz (typically for AVR-powerde Arduinos, except Arduino Fio and Mini @ 3.3 V):
+3. Max interval length at a cpu clock of 16 MHz (typically for AVR-powerd Arduinos, except Arduino Fio and Mini @ 3.3 V):
  * For timer 1: 4.194304 s
  * For timer 2: 0.016384 s
  
