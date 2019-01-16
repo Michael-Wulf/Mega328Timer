@@ -19,9 +19,9 @@ That's why this library uses the overflow interrupt and preloads the timer/count
 ## Usage
 Use the **attachTimerInterrupt** function to repeatedly call a specific function in a fixed interval.
 
-    attachTimerInterrupt(timerNr, interval_us, function_ptr)
+    attachTimerInterrupt(timer_nr, interval_us, function_ptr)
     
-* timerNr: The number of the timer to be used. Valid values: 1, 2 
+* timer_nr: The number of the timer to be used. Valid values: 1, 2 
 * interval_us: The interval in **microseconds** in which the interrupt has to be raised
 * function_ptr: A pointer to the function (the name of the function) that has to be executed. This function must have no input arguments and no return arguments! 
 Furthermore, keep in mind that this function will be called from inside the interrupt service routine (ISR). The amount of instructions should be very limited and not time-consuming commands should be placed here. 
@@ -53,6 +53,10 @@ Example:
  * For timer 2: 0.016384 s
  
 4. Because of other interrupts that are usually enabled on an Arduino a timer interval of < 500 us (microseconds) is not recommended.
+
+5. Timer 1 cannot be used when also the servo library is used at the same time.
+
+6. Timer 2 cannot be used when also the tone library is used at the same time.
 
 ----
 ## Changelog
