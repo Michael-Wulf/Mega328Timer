@@ -3,7 +3,7 @@
 Library that can be used in plain C programs or Arduino sketches for Atmel/Microchip ATmega328 AVR MCUs.
 
 ----
-##Details
+## Details
 This library facilitates a convenient way of using overflow interrupts of the AVR's timer 1 (16-bit) and 2 (8-bit).
 Only overflow interrupts will be used to keep this library compatible to the Servo and tone libraries.
 
@@ -16,7 +16,7 @@ To keep this timer library even compatible with the tone library if it is not us
 That's why this library uses the overflow interrupt and preloads the timer/counter register TCNT2 accordingly after raising the overflow interrupt.
 
 ----
-##Usage
+## Usage
 Use the **attachTimerInterrupt** function to repeatedly call a specific function in a fixed interval.
 
     attachTimerInterrupt(timerNr, interval_us, function_ptr)
@@ -43,7 +43,7 @@ Example:
     }
     
 ----
-##Limitations
+## Limitations
 1. No interrupt-driven functions should be called from inside the timer function. This will cause to a deadlock because during the timer function, which is called from the timer's overflow interrupt service routine, all interrupts will be shortly disabled!
 
 2. Because of #1, the amount of instructions and their complexity should be very limited!
@@ -55,5 +55,5 @@ Example:
 4. Because of other interrupts that are usually enabled on an Arduino a timer interval of < 500 us (microseconds) is not recommended.
 
 ----
-##Changelog
+## Changelog
 * 2019/01/16: Initial version
